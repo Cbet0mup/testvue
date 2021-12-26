@@ -16,7 +16,8 @@
             <input class="custom-radio" type="radio"
                    v-bind:value="response.correct"
                    v-bind:name="index"
-                   v-model="userResponses[index]"> {{ response.text }}
+                   v-model="userResponses[index]">
+            {{ response.text }}
           </label>
         </li>
       </ol>
@@ -35,7 +36,7 @@
       Тест окончен
     </h2>
     <p style="margin: 5px">
-      Ваш результат: {{ score() }} / {{ subject.questions.length }}
+      Ваш результат: {{ score() }} из {{ subject.questions.length }} - {{ score()*100/subject.questions.length }}%
     </p>
   </div>
   </div>
@@ -135,7 +136,7 @@ export default {
   margin: 5px;
 }
 .custom-radio{
-
+  margin-right: 10px;
 }
 
 </style>
