@@ -59,12 +59,6 @@ export default {
               {text: '', correct: false},
               {text: '', correct: false},
             ]
-          }, {
-            text: "",
-            responses: [
-              {text: '', correct: true},
-              {text: '', correct: false},
-            ]
           }
         ]
       },
@@ -74,7 +68,7 @@ export default {
 
       // ответы: правильно/неправильно
       userResponses: [],
-      urlApi: '',
+      urlApi: 'questions/',
     }
   },
   mounted() {
@@ -102,9 +96,7 @@ export default {
     },
     // Возвращает количесво "true" в userResponses
     score() {
-      return this.userResponses.filter((val) => {
-        return val
-      }).length;
+      return this.userResponses.filter(val => val===true).length;
     }
   }
 }
